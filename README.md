@@ -1,4 +1,4 @@
-# Strings Lab 1
+ Strings Lab 1
 
 ## Instructions for lab submission
 
@@ -14,20 +14,63 @@
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
+```
+```
+Answer:
+```
+for num in 1...10 {
+    print(String(num), terminator: " ")
+}
+
+
+```
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
+```
+```
+Answer:
+```
+for num in 5...51 {
+if num % 2 == 0 {
+print(String(num), terminator : " ")
+}
+}
+
+```
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+```
+```
+Answer:
+```
+for num in 1...60 {
+if num % 10 == 4 {
+print(String(num), terminator : " ")
+}
+}
+```
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+
+```
+```
+Answer:
+```
+var greeting = "Hello World"
+for char in greeting {
+print("\(char)")
+}
+
+```
 
 ***
 ## Question 5
@@ -36,6 +79,18 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+```
+```
+Answer:
+```
+let myStringSeven = "Hello world!"
+let firstIndex1 = myStringSeven.startIndex
+let endIndex1 = myStringSeven.endIndex
+let lastCharacterIndex1 = myStringSeven.index(before: endIndex1)
+let lastCharacter1 = myStringSeven[lastCharacterIndex1]
+print(lastCharacter1)
+```
+
 ***
 ## Question 6
 
@@ -43,21 +98,52 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
 
+```
+```
+Answer:
+```
+var exampleString = "HelloWorld!"
+var counter = 2
+var unEvenString = ""
+if exampleString.count % 2 == 0 {
+print(exampleString)
+}
+if exampleString.count % 2 == 1 {
+    // index starts at 0 and I wa
+    for (index, char) in exampleString.enumerated() {
+        if index % 2 == 0 {
+            print("\(char)", terminator:"")
+        }
+    }
+}
+
+```
 ***
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
+var word: Char = "c"
 ***
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+var d = "dog" == "\u{0064}\u{006F}\u{0067}"
+
+var cat = "cat" == "\u{0063}\u{0061}\u{0074}"
+
+var flower = "flower" == "\u{0066}\u{006C}\u{006F}\u{0077}\u{0065}\u{0072}"
+
+var sun = "sun" == "\u{0073}\u{0075}\u{006E}"
+
+var door = "door" == "\u{0064}\u{006F}\u{006F}\u{00F4}"
+
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
-
+var capsGreeting = "\u{0048}\u{0045}\u{004C}\u{004C}\u{004F} \u{0057}\u{004F}\u{0052}\u{004C}\u{0044}\u{0021}"
 ***
 ## Question 10
 
